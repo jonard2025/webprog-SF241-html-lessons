@@ -1,14 +1,34 @@
-# webprog-SF241-html-lessons
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
+<title>WEBPROG SF241 Introduction</title>
 </head>
 <body>
+ 
+<h1>Personal Profile Web page </h1>
+<p>
+ 
+About Me<br>
 
-<h1>WEBPROG SF241</h1>
-<p>MAD MONKET</p>
+A dynamic, motivated and highly accomplished professional with a customer centric approach and over 4 years experience in client-face position in different industries: Customer Service/Success, Account Management, as well as administrative roles. 
+Strong interpersonal skills, with the ability to build and maintain long-term relationships with both internal and external stakeholders. 
+Fluent  in English and Tagalog, with excellent written and verbal business level communication skills.
+Critical-thinker with attention to detail, playing both individually and highly resourceful as a team-player. 
+Proficiency in Microsoft Office Suite and Google Workspace, with ability to quickly adapt to new tools and technologies.<br>
 
+ASIA PACIFIC COLLEGE<br>
+
+Bachelor of Science in Computert Science specialized in Cybersecurity and Forensic<br>
+
+Cybersecurity<br>
+
+Traveling, Snorkling, Gaming<br>
+
+To maintain focus and achieve goals and to be succesful<br>
+
+Picture Gallery<br>
+ <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="Girl in a jacket" width="500" height="500">
+</p>
 </body>
 </html>
+ 
