@@ -5,7 +5,7 @@
 </head>
 <body>
  
-<h1>Personal Profile Web page </h1>
+<h1>WEBPROG SF241 - JONARD BACANI</h1>
 <p>
  
 About Me<br>
