@@ -129,7 +129,7 @@
 
     <div class="card">
         <div class="section-title">Picture Gallery</div>
-        <img src="https://www.w3schools.com/tags/img_girl.jpg" alt="Profile Image 2">
+        <img src="https://media.licdn.com/dms/image/v2/D5603AQFD757q3IPmxg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693400289128?e=1765411200&v=beta&t=IgFdn7g39qe5Tx9mqau7CgL4jyhfDU66yAMOXuEs4Uo" alt="Profile Image 2">
     </div>
 
 </div>
