@@ -1,3 +1,9 @@
-#example1 {
-  background: url(https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/image.png?raw=true) right bottom no-repeat, url(paper.gif) left top repeat;
+body {
+  background-color: rgb(173, 180, 230);
 }
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
