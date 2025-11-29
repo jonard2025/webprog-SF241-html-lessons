@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/css-grid.css?version=0.1">
 <title>WEBPROG SF241 Introduction</title>
 
-<!-- Google Font (optional but looks nicer) -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+<link rel="stylesheet" href="css/css-grid.css?version=0.1">
 
 <style>
+  /* Background for whole page */
   body {
     font-family: "Poppins", sans-serif;
-    color: #333333; /* Default text color */
-    background-color: #f9f9f9; /* Light background (optional) */
+    color: #333333;
+    background-image: url('https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/pngtree-3d-wave-creativity-folded-fabric-gold-silk-background-design-image_677742.jpg?raw=true');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
     padding: 20px;
   }
 
   h1 {
-    color: #1a73e8; /* Blue heading */
+    color: #1a73e8;
     font-weight: 600;
   }
 
   p {
     font-size: 18px;
     line-height: 1.6;
-    color: #444444;
+    color: #fff; /* Make text readable on gold background */
   }
 
   .highlight {
-    color: #FFD700; /* Red text for emphasis */
+    color: #FFD700;
+    font-weight: bold;
+  }
+
+  /* Image gallery grid */
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .container img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  /* LIFE IS TOO BEAUTIFUL section */
+  .quote-text {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 40px;
+    color: #FFD700;
     font-weight: bold;
   }
 </style>
@@ -59,34 +84,27 @@
   <span class="highlight">Picture Gallery</span><br>
 </p>
 
-</body>
-</html>
+<!-- First image -->
+<img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" 
+     width="500" height="500" style="display:block; margin:20px auto;">
 
-</style>
- <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Girl in a jacket" width="500" height="500">
-</p>
-
+<!-- Image grid -->
 <div class="container">
-<div>
-  <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Girl in a jacket" width="500" height="500">
+  <div>
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true">
+  </div>
+  <div>
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true">
+  </div>
+  <div>
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/image.png?raw=true">
+  </div>
 </div>
-<div>
-  <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Girl in a jacket" width="500" height="500">
-</div>
-<div>
-  <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/image.png?raw=true" alt="Girl in a jacket" width="500" height="500">
-</div>
-</style>
 
-<div>LIFE IS TOO</div>
-<div>BEAUTIFUL</div>
-<div>TO BE WASTED</div>
- 
-<style>
-p {
-  background-image: url('https://raw.githubusercontent.com/jonard2025/webprog-SF241-html-lessons/refs/heads/feature/css-grid/abstract-geometric-shape-background_692652-322.avif');
-}
+<!-- Quote -->
+<div class="quote-text">LIFE IS TOO</div>
+<div class="quote-text">BEAUTIFUL</div>
+<div class="quote-text">TO BE WASTED</div>
 
 </body>
 </html>
- 
