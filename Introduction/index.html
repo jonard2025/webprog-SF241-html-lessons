@@ -1,79 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/rwd.css">
-<title>WEBPROG SF241 Introduction</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Profile | WebProg SF241</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #f2bd53;
+      --accent: #191401;
+      --light: #f8fafc;
+      --dark: #0f172a;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+      color: var(--dark);
+      line-height: 1.7;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    /* ===== Main Container ===== */
+    .container {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+    }
+
+    /* ===== Profile Card ===== */
+    .profile {
+      background: white;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .profile img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .profile h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .profile p {
+      font-size: 0.95rem;
+      margin-top: 0.8rem;
+      color: #475569;
+    }
+
+    .tags {
+      margin-top: 1rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #e0e7ff;
+      color: var(--primary);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      margin: 0.2rem;
+    }
+
+    /* ===== Content Area ===== */
+    .content {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 18px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+    }
+
+    .card ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Philippines Section ===== */
+    .philippines {
+      background: linear-gradient(135deg, #ffffff, #f1f5f9);
+    }
+
+    .philippines h3 {
+      text-align: center;
+    }
+
+    .philippines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-box {
+      background: white;
+      border-radius: 14px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+    }
+
+    .info-box h4 {
+      color: var(--secondary);
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== Button ===== */
+    .btn {
+      display: inline-block;
+      background: var(--secondary);
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(37,99,235,0.35);
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      color: #64748b;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
- 
-<h1>Personal Profile Web page </h1>
-<p>
- 
-About Me!<br>
 
-A dynamic, motivated and highly accomplished professional student with a customer centric approach and over 4 years experience in client-face position in different industries: Customer Service/Success, Account Management, as well as administrative roles. 
-Strong interpersonal skills, with the ability to build and maintain long-term relationships with both internal and external stakeholders. 
-Fluent  in English and Tagalog, with excellent written and verbal business level communication skills.
-Critical-thinker with attention to detail, playing both individually and highly resourceful as a team-player. 
-Proficiency in Microsoft Office Suite and Google Workspace, with ability to quickly adapt to new tools and technologies.<br>
+  <header>
+    <h1>Personal Profile</h1>
+    <p>Bachelor of Science in Computer Science • Cybersecurity & Forensics</p>
+  </header>
 
-ASIA PACIFIC COLLEGE<br>
+  <main class="container">
 
-Bachelor of Science in Computert Science specialized in Cybersecurity and Forensic<br>
+    <!-- Profile -->
+    <section class="profile">
+      <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Profile Photo" />
+      <h2>About Me</h2>
+      <p>
+        A dynamic and motivated professional student with over four years of experience in customer-facing and administrative roles. Strong interpersonal skills, critical thinking, and adaptability to modern technologies.
+      </p>
+      <div class="tags">
+        <span class="tag">Cybersecurity</span>
+        <span class="tag">Customer Service</span>
+        <span class="tag">Account Management</span>
+        <span class="tag">Team Player</span>
+      </div>
+    </section>
 
-Cybersecurity<br>
+    <!-- Main Content -->
+    <section class="content">
 
-Traveling, Snorkling, Gaming<br>
+      <div class="card">
+        <h3>Education & Skills</h3>
+        <p><strong>Asia Pacific College</strong></p>
+        <p>Bachelor of Science in Computer Science<br>Specialization: Cybersecurity & Forensics</p>
+        <ul>
+          <li>Fluent in English and Tagalog</li>
+          <li>Microsoft Office & Google Workspace</li>
+          <li>Adaptable to new tools and technologies</li>
+        </ul>
+      </div>
 
-To maintain focus and achieve goals and to be succesful.<br>
+      <div class="card philippines">
+        <h3>The Philippines</h3>
+        <p style="text-align:center;">A vibrant archipelago known for its natural wonders, rich culture, and warm hospitality.</p>
+        <div class="philippines-grid">
+          <div class="info-box">
+            <h4>The Country</h4>
+            <p>Known for breathtaking beaches, mountains, and diverse traditions.</p>
+          </div>
+          <div class="info-box">
+            <h4>Wonders</h4>
+            <p>Home to world-famous islands, reefs, and historical landmarks.</p>
+          </div>
+          <div class="info-box">
+            <h4>Major Islands</h4>
+            <p>Luzon, Visayas, and Mindanao</p>
+          </div>
+        </div>
+      </div>
 
-Picture Gallery<br>
- <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Girl in a jacket" width="500" height="500">
-</p>
-<div class="grid-container">
+      <div class="card" style="text-align:center;">
+        <h3>Interactive Demo</h3>
+        <p id="demo">Click the button to change this text.</p>
+        <button class="btn" onclick="myFunction()">Try it</button>
+      </div>
 
-<div class="header"><h1>PHILIPPINES</h1></div>
+    </section>
 
-<div class="menu">
-  <ul>
-    <li>THE COUNTRY</li>
-    <li>WONDERS OF THE COUNTRY</li>
-    <li>THREE MAJOR ISLANDS</li>
-    <li>HOME IS PHILIPPINES</li>
-  </ul>
-</div>
+  </main>
 
-<div class="content">
-  <h1>WONDERS OF THE COUNTRY</h1>
-  <p>The Philippines is a vibrant archipelago of breathtaking natural wonders, rich cultural heritage, and warm, welcoming people.</p>
-  <p>The Philippines is rich in culture and blessed with beautiful islands.</p>
-  <p>The Philippines is one of the most vibrant countries, known for its warm and hospitable people.</p>
-</div>  
+  <footer>
+    © 2025 • Responsive Personal Profile • Web Programming SF241
+  </footer>
 
-<div class="facts">
-  <h2>THREE MAJOR ISLANDAS</h2>
-  <ul>
-    <li>The Philippines has three major island groups: Luzon, Visayas, and Mindanao.</li>
-    <li>The Philippines is near the deepest part of the Pacific Ocean, the Mariana Trench.</li>
-  </ul>
-</div>
-
-<div class="footer"><p>Resize the browser window to see the responsive effect.</p></div>
-  
-</div>
-
-<h2>Demo External JavaScript</h2>
-
-<p id="demo">A Paragraph.</p>
-
-<button type="button" onclick="myFunction()">Try it</button>
-
-<p>This example links to "myScript.js".</p>
-<p>(myFunction is stored in "myScript.js")</p>
-
-<script src="js/myScript.js"></script>
+  <script>
+    function myFunction() {
+      document.getElementById('demo').innerHTML = 'Hello! JavaScript is successfully linked ✨';
+    }
+  </script>
 
 </body>
 </html>
- 
