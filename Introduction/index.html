@@ -1,117 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>WEBPROG SF241 Introduction</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jonard Bacani - Personal Profile</title>
 
-<link rel="stylesheet" href="css/css-grid.css?version=0.1">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-<style>
-  /* Background for whole page */
-  body {
-    font-family: "Poppins", sans-serif;
-    color: #333333;
-    background-image: url('https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/pngtree-elegant-ash-grey-paper-texture-for-background-design-image_13690160.png?raw=true');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 20px;
-  }
+  <!-- External CSS (Optional) -->
+  <link rel="stylesheet" href="css/css-grid.css?version=0.2">
 
-  h1 {
-    color: #1a73e8;
-    font-weight: 600;
-  }
+  <style>
+    /* General Page Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      background: url('https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/pngtree-elegant-ash-grey-paper-texture-for-background-design-image_13690160.png?raw=true') center/cover no-repeat fixed;
+      margin: 0;
+      padding: 0 20px;
+      line-height: 1.6;
+    }
 
-  p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #451010; /* Make text readable on gold background */
-  }
+    h1, h2 {
+      font-weight: 600;
+      margin: 0.5em 0;
+      text-align: center;
+    }
 
-  .highlight {
-    color: #FFD700;
-    font-weight: bold;
-  }
+    h1 {
+      color: #1a73e8;
+      font-size: 2.5em;
+      margin-top: 20px;
+    }
 
-  /* Image gallery grid */
-  .container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-top: 20px;
-  }
+    h2 {
+      color: #f3780d;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+    }
 
-  .container img {
-    width: 100%;
-    border-radius: 10px;
-  }
+    p {
+      max-width: 900px;
+      margin: 0 auto 20px auto;
+      font-size: 1.1em;
+      text-align: justify;
+      color: #451010;
+    }
 
-  /* LIFE IS TOO BEAUTIFUL section */
-  .quote-text {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 40px;
-    color: #f3780d;
-    font-weight: bold;
-  }
-</style>
+    .highlight {
+      color: #FFD700;
+      font-weight: 600;
+    }
 
+    /* Gallery Grid */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 30px auto;
+    }
+
+    .container img {
+      width: 100%;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Quote Section */
+    .quote-text {
+      text-align: center;
+      font-size: 2em;
+      color: #f3780d;
+      font-weight: bold;
+      margin: 50px 0 30px 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .quote-text {
+        font-size: 1.5em;
+      }
+    }
+
+  </style>
 </head>
 <body>
 
-<h1>Personal Profile Web - JONARD BACANI</h1>
+  <!-- Header -->
+  <h1>Jonard Bacani - Personal Profile</h1>
 
-<p>
-  <span class="highlight">About Me!</span><br><br>
+  <!-- About Section -->
+  <section>
+    <p><span class="highlight">About Me!</span><br><br>
+      A dynamic, motivated, and highly accomplished professional student with over 4 years experience in customer-facing roles across different industries. Strong interpersonal skills, fluent in English and Tagalog, critical thinker, and proficient in Microsoft Office and Google Workspace.
+    </p>
 
-  A dynamic, motivated and highly accomplished professional student with a customer centric approach and over 4 years experience in client-face position in different industries: Customer Service/Success, Account Management, as well as administrative roles. 
-  Strong interpersonal skills, with the ability to build and maintain long-term relationships with both internal and external stakeholders. 
-  Fluent in English and Tagalog, with excellent written and verbal business level communication skills.
-  Critical-thinker with attention to detail, playing both individually and highly resourceful as a team-player. 
-  Proficiency in Microsoft Office Suite and Google Workspace, with ability to quickly adapt to new tools and technologies.<br><br>
+    <p><span class="highlight">Education:</span><br>
+      Asia Pacific College, Bachelor of Science in Computer Science (Cybersecurity & Forensic)
+    </p>
 
-  <span class="highlight">ASIA PACIFIC COLLEGE</span><br>
-  Bachelor of Science in Computer Science specialized in Cybersecurity and Forensic<br><br>
+    <p><span class="highlight">Interests:</span><br>
+      Cybersecurity, Traveling, Snorkeling, Gaming
+    </p>
 
-  <span class="highlight">Interests:</span><br>
-  Cybersecurity<br>
-  Traveling, Snorkeling, Gaming<br><br>
+    <p><span class="highlight">Goal:</span><br>
+      To maintain focus, achieve goals, and succeed professionally.
+    </p>
+  </section>
 
-  <span class="highlight">Goal:</span><br>
-  To maintain focus, achieve goals, and be successful.<br><br>
-
-  <span class="highlight">Picture Gallery</span><br>
-</p>
-
-<!-- First image -->
-<img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" 
-     width="500" height="500" style="display:block; margin:20px auto;">
-
-<!-- Image grid -->
-<div class="container">
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true">
+  <!-- Single Featured Image -->
+  <div style="text-align:center; margin:30px 0;">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Jonard Bacani" style="max-width:500px; border-radius:15px;">
   </div>
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true">
+
+  <!-- Image Gallery -->
+  <section class="container">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Gallery Image 1">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Gallery Image 2">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt="Gallery Image 3">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt="Gallery Image 4">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt="Gallery Image 5">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt="Gallery Image 6">
+  </section>
+
+  <!-- Quote Section -->
+  <div class="quote-text">
+    LIFE IS TOO BEAUTIFUL TO WASTE
   </div>
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true">
-  </div>
-    <div>LIFE IS</div>
-    <div>TOO BEAUTIFUL</div>
-    <div>TO WASTE</div>
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true">
-  </div>
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true">
-  </div>
-  <div>
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true">
-  </div>
-</div>
+
+  <!-- Footer / Credits -->
+  <footer style="text-align:center; margin-bottom:30px; font-size:0.9em; color:#555;">
+    Images sourced from GitHub repositories.<br>
+    Fonts: Google Fonts (Poppins).<br>
+    AI Assistance: ChatGPT (https://chat.openai.com)
+  </footer>
 
 </body>
 </html>
