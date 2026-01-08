@@ -8,55 +8,36 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <!-- External CSS (Optional) -->
+  <link rel="stylesheet" href="css/css-grid.css?version=0.2">
+
   <style>
-    /* ===== General Styles ===== */
+    /* General Page Styles */
     body {
       font-family: 'Poppins', sans-serif;
       color: #333;
       background: url('https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/pngtree-elegant-ash-grey-paper-texture-for-background-design-image_13690160.png?raw=true') center/cover no-repeat fixed;
       margin: 0;
-      padding: 0;
-      scroll-behavior: smooth; /* smooth scroll for nav links */
+      padding: 0 20px;
+      line-height: 1.6;
     }
 
-    /* ===== Navigation ===== */
-    nav {
-      position: sticky;
-      top: 0;
-      background-color: rgba(255, 255, 255, 0.95);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      z-index: 1000;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    nav a {
-      text-decoration: none;
-      font-weight: 500;
-      color: #1a73e8;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #f3780d;
-    }
-
-    /* ===== Header ===== */
-    h1 {
-      text-align: center;
-      color: #1a73e8;
+    h1, h2 {
       font-weight: 600;
-      margin-top: 20px;
+      margin: 0.5em 0;
+      text-align: center;
+    }
+
+    h1 {
+      color: #1a73e8;
       font-size: 2.5em;
+      margin-top: 20px;
     }
 
     h2 {
-      text-align: center;
       color: #f3780d;
-      font-weight: 600;
-      margin: 40px 0 20px;
+      font-size: 1.8em;
+      margin-bottom: 15px;
     }
 
     p {
@@ -72,7 +53,7 @@
       font-weight: 600;
     }
 
-    /* ===== Gallery ===== */
+    /* Gallery Grid */
     .container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -84,7 +65,6 @@
     .container img {
       width: 100%;
       border-radius: 15px;
-      cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
@@ -93,7 +73,7 @@
       box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    /* ===== Quote Section ===== */
+    /* Quote Section */
     .quote-text {
       text-align: center;
       font-size: 2em;
@@ -108,63 +88,36 @@
       to {opacity: 1;}
     }
 
-    /* ===== Lightbox Styles ===== */
-    .lightbox {
-      position: fixed;
-      display: none;
-      justify-content: center;
-      align-items: center;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 2000;
-    }
-
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 15px;
-    }
-
-    .lightbox:target {
-      display: flex;
-    }
-
-    /* ===== Footer ===== */
-    footer {
-      text-align: center;
-      margin: 50px 0;
-      font-size: 0.9em;
-      color: #555;
-    }
-
-    /* ===== Responsive ===== */
+    /* Responsive Design */
     @media (max-width: 768px) {
-      h1 { font-size: 2em; }
-      h2 { font-size: 1.5em; }
-      .quote-text { font-size: 1.5em; }
-      nav { gap: 15px; padding: 10px 0; }
+      body {
+        padding: 15px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .quote-text {
+        font-size: 1.5em;
+      }
     }
+
   </style>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <nav>
-    <a href="#about">About Me</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#quote">Quote</a>
-  </nav>
 
   <!-- Header -->
   <h1>Jonard Bacani - Personal Profile</h1>
 
   <!-- About Section -->
-  <section id="about">
+  <section>
     <p><span class="highlight">About Me!</span><br><br>
-      A dynamic, motivated, and highly accomplished professional student with over 4 years experience in customer-facing roles. Strong interpersonal skills, fluent in English and Tagalog, critical thinker, and proficient in Microsoft Office and Google Workspace.
+      A dynamic, motivated, and highly accomplished professional student with over 4 years experience in customer-facing roles across different industries. Strong interpersonal skills, fluent in English and Tagalog, critical thinker, and proficient in Microsoft Office and Google Workspace.
     </p>
 
     <p><span class="highlight">Education:</span><br>
@@ -180,30 +133,25 @@
     </p>
   </section>
 
-  <!-- Gallery Section -->
-  <h2 id="gallery">Picture Gallery</h2>
-  <section class="container">
-    <a href="#img1"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Gallery Image 1"></a>
-    <a href="#img2"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Gallery Image 2"></a>
-    <a href="#img3"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt="Gallery Image 3"></a>
-    <a href="#img4"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt="Gallery Image 4"></a>
-    <a href="#img5"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt="Gallery Image 5"></a>
-    <a href="#img6"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt="Gallery Image 6"></a>
-  </section>
-
-  <!-- Lightbox Images -->
-  <div id="img1" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt=""></a></div>
-  <div id="img2" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt=""></a></div>
-  <div id="img3" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt=""></a></div>
-  <div id="img4" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt=""></a></div>
-  <div id="img5" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt=""></a></div>
-  <div id="img6" class="lightbox"><a href="#"><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt=""></a></div>
-
-  <!-- Quote Section -->
-  <div id="quote" class="quote-text">
-    LIFE IS TOO BEAUTIFUL TO WASTE
+  <!-- Single Featured Image -->
+  <div style="text-align:center; margin:30px 0;">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Jonard Bacani" style="max-width:500px; border-radius:15px;">
   </div>
 
+  <!-- Image Gallery -->
+  <section class="container">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Gallery Image 1">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Gallery Image 2">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt="Gallery Image 3">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt="Gallery Image 4">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt="Gallery Image 5">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt="Gallery Image 6">
+  </section>
+
+  <!-- Quote Section -->
+  <div class="quote-text">
+    LIFE IS TOO BEAUTIFUL TO WASTE
+  </div>
 
 
 </body>
