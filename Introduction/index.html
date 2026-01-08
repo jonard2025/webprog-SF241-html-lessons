@@ -8,34 +8,31 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <!-- External CSS (Optional) -->
-  <link rel="stylesheet" href="css/css-grid.css?version=0.2">
-
   <style>
-    /* General Page Styles */
+    /* General Styles */
     body {
       font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
       color: #333;
       background: url('https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/pngtree-elegant-ash-grey-paper-texture-for-background-design-image_13690160.png?raw=true') center/cover no-repeat fixed;
-      margin: 0;
-      padding: 0 20px;
       line-height: 1.6;
     }
 
     h1, h2 {
       font-weight: 600;
-      margin: 0.5em 0;
       text-align: center;
+      margin: 0.5em 0;
     }
 
     h1 {
-      color: #1a73e8;
+      color: #1e3a8a; /* Deep Blue */
       font-size: 2.5em;
       margin-top: 20px;
     }
 
     h2 {
-      color: #6d3607;
+      color: #7c2d12; /* Rich Brown */
       font-size: 1.8em;
       margin-bottom: 15px;
     }
@@ -45,39 +42,39 @@
       margin: 0 auto 20px auto;
       font-size: 1.1em;
       text-align: justify;
-      color: #451010;
+      color: #3b1f1f;
     }
 
     .highlight {
-      color: #FFD700;
+      color: #f59e0b; /* Gold accent */
       font-weight: 600;
     }
 
-    /* Gallery Grid */
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
-      margin: 30px auto;
+    /* Featured Image */
+    .featured-image {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;
     }
 
-    .container img {
+    .featured-image img {
+      max-width: 500px;
       width: 100%;
       border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
       transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .container img:hover {
+    .featured-image img:hover {
       transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
     }
 
     /* Quote Section */
     .quote-text {
       text-align: center;
       font-size: 2em;
-      color: #884a14;
+      color: #b45309;
       font-weight: bold;
       margin: 50px 0 30px 0;
       animation: fadeIn 2s ease-in-out;
@@ -88,7 +85,28 @@
       to {opacity: 1;}
     }
 
-    /* Responsive Design */
+    /* Gallery Grid */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 40px auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
       body {
         padding: 15px;
@@ -106,7 +124,6 @@
         font-size: 1.5em;
       }
     }
-
   </style>
 </head>
 <body>
@@ -133,43 +150,25 @@
     </p>
   </section>
 
-  <!-- Single Featured Image -->
-  <div style="text-align:center; margin:30px 0;">
-    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Jonard Bacani" style="max-width:500px; border-radius:15px;">
+  <!-- Featured Image -->
+  <div class="featured-image">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Introduction/image.png?raw=true" alt="Jonard Bacani">
   </div>
 
-  <!-- Quote Section -->
+  <!-- Quote -->
   <div class="quote-text">
     TO LIVE A LIFE WITHOUT LIMITATION
   </div>
 
-<style>
-.container {
-  display: flex;
-  background-color: DodgerBlue;
-}
-
-.container div {
-  background-color: #f1f1f1;
-  margin: 10px;
-  padding: 20px;
-  font-size: 30px;
-}
-</style>
-</head>
-<body>
-
-<div class="container">
-  <div> <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Gallery Image 1"></div>
-  <div> <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Gallery Image 2">/div>
-  <div><img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt="Gallery Image 3"></div>
-  <div> <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt="Gallery Image 4"></div>
-  <div> <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt="Gallery Image 5"></div>
-  <div> <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt="Gallery Image 6"></div>
-</div>
-
-
-
+  <!-- Gallery Section -->
+  <div class="gallery">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/584420192_2013348265875466_8706221296384353039_n%20(1).png?raw=true" alt="Gallery Image 1">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/Screenshot%202025-11-28%20143023.png?raw=true" alt="Gallery Image 2">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/449180710_18363982216100360_536621986824455376_n.jpg?raw=true" alt="Gallery Image 3">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/541006934_18428081827100360_4760799111197846190_n.jpg?raw=true" alt="Gallery Image 4">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/557601473_18433414243100360_8631887871414555389_n%20(1).jpg?raw=true" alt="Gallery Image 5">
+    <img src="https://github.com/jonard2025/webprog-SF241-html-lessons/blob/main/471586028_18392143615100360_8376085231183085146_n.jpg?raw=true" alt="Gallery Image 6">
+  </div>
 
 </body>
 </html>
