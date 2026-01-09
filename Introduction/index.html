@@ -3,140 +3,219 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonard Bacani</title>
+  <title>Jonard Bacani | Portfolio</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Vue 3 CDN -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
   <style>
+    /* ===== GLOBAL ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #0b0b0b;
       color: #fff;
+      scroll-behavior: smooth;
     }
 
-    /* NAVBAR */
+    section { padding: 120px 80px; }
+
+    h1, h2 { color: gold; }
+
+    /* ===== NAVBAR ===== */
     .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 25px 80px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 80px;
-      position: fixed;
-      width: 100%;
-      top: 0;
       background: rgba(0,0,0,0.85);
       backdrop-filter: blur(8px);
       z-index: 1000;
     }
 
-    .navbar nav a {
+    .navbar a {
       margin-left: 30px;
-      text-decoration: none;
       color: #aaa;
+      text-decoration: none;
+      font-size: 0.9rem;
     }
 
-    .navbar nav a:hover,
-    .navbar nav a.active {
+    .navbar a.active,
+    .navbar a:hover {
       color: gold;
     }
 
-    /* HERO */
-    .hero {
-      padding: 140px 80px 80px;
-    }
-
-    /* GRID CONTAINER (YOUR CSS APPLIED) */
+    /* ===== GRID SYSTEM ===== */
     .container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 40px;
       align-items: center;
     }
 
-    /* ABOUT BOX (YOUR CSS APPLIED) */
+    /* ===== ABOUT BOX ===== */
     .about-box {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255,255,255,0.1);
       border-left: 4px solid gold;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
     }
 
-    .about-box p {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
+    .highlight { color: gold; font-weight: 600; }
 
-    .highlight {
-      color: gold;
-      font-weight: 600;
-    }
-
-    /* IMAGE */
-    .hero-image {
-      display: flex;
-      justify-content: center;
-    }
-
+    /* ===== HERO IMAGE ===== */
     .hero-image img {
       width: 320px;
       border-radius: 50%;
-      box-shadow: 0 0 120px rgba(255, 215, 0, 0.6);
+      box-shadow: 0 0 120px rgba(255,215,0,0.6);
+      display: block;
+      margin: auto;
     }
 
+    /* ===== GALLERY & PROJECTS ===== */
+    .card {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact p {
+      font-size: 1.1rem;
+    }
+
+    /* ===== MOBILE ===== */
     @media (max-width: 768px) {
-      .navbar {
-        padding: 20px;
-      }
-      .hero {
-        padding: 120px 20px;
-      }
+      section { padding: 100px 20px; }
+      .navbar { padding: 20px; }
     }
   </style>
 </head>
 
 <body>
+<div id="app">
 
-<!-- NAVBAR -->
-<header class="navbar">
-  <div class="logo">Jonard Bacani</div>
-  <nav>
-    <a href="#home" class="active">Home</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <strong>Jonard Bacani</strong>
+    <nav>
+      <a href="#home" :class="{active: active==='home'}" @click="active='home'">Home</a>
+      <a href="#gallery" :class="{active: active==='gallery'}" @click="active='gallery'">Gallery</a>
+      <a href="#projects" :class="{active: active==='projects'}" @click="active='projects'">Projects</a>
+      <a href="#contact" :class="{active: active==='contact'}" @click="active='contact'">Contact</a>
+    </nav>
+  </header>
 
-<!-- HERO -->
-<section class="hero" id="home">
+  <!-- HOME -->
+  <section id="home">
+    <div class="container">
+      <div class="about-box">
+        <p class="highlight">HELLO — I’M</p>
+        <h1>{{ profile.name }}</h1>
+        <p>{{ profile.tagline }}</p>
+        <p>{{ profile.roles }}</p>
+      </div>
 
-  <div class="container">
-
-    <!-- LEFT -->
-    <div class="about-box">
-      <p class="intro">HELLO — I’M</p>
-      <h1>Jonard Bacani</h1>
-
-      <p>
-        <span class="highlight">Curious by nature.</span><br>
-        Cyber-driven by passion.
-      </p>
-
-      <p>
-        CYBERSECURITY • WEB • STUDENT
-      </p>
+      <div class="hero-image">
+        <img :src="profile.photo" alt="Profile">
+      </div>
     </div>
+  </section>
 
-    <!-- RIGHT -->
-    <div class="hero-image">
-      <img src="your-photo.png" alt="Profile photo">
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="container">
+      <div class="card" v-for="item in gallery" :key="item.title">
+        <img :src="item.image" alt="">
+        <p class="highlight">{{ item.title }}</p>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="container">
+      <div class="card" v-for="project in projects" :key="project.name">
+        <h3 class="highlight">{{ project.name }}</h3>
+        <p>{{ project.description }}</p>
+      </div>
+    </div>
+  </section>
 
-</section>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>Email: {{ contact.email }}</p>
+    <p>GitHub: {{ contact.github }}</p>
+    <p>LinkedIn: {{ contact.linkedin }}</p>
+  </section>
+
+</div>
+
+<!-- VUE SCRIPT -->
+<script>
+const { createApp } = Vue;
+
+createApp({
+  data() {
+    return {
+      active: 'home',
+
+      profile: {
+        name: 'Jonard Bacani',
+        tagline: 'Curious by nature. Cyber-driven by passion.',
+        roles: 'CYBERSECURITY • WEB • STUDENT',
+        photo: 'your-photo.png'
+      },
+
+      gallery: [
+        { title: 'Confidence', image: 'img1.jpg' },
+        { title: 'Adventure', image: 'img2.jpg' },
+        { title: 'Creativity', image: 'img3.jpg' }
+      ],
+
+      projects: [
+        {
+          name: 'Lost & Found Tracker',
+          description: 'A campus-based system for reporting and tracking lost items.'
+        },
+        {
+          name: 'PawCare App',
+          description: 'A responsible pet ownership app aligned with SDG 16.'
+        }
+      ],
+
+      contact: {
+        email: 'jonard@email.com',
+        github: 'github.com/jonard',
+        linkedin: 'linkedin.com/in/jonard'
+      }
+    }
+  }
+}).mount('#app');
+</script>
 
 </body>
 </html>
