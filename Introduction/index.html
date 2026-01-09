@@ -1,181 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jonard Bacani | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jonard Bacani | Portfolio</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Vue 3 CDN -->
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<!-- Vue 3 CDN -->
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-  <style>
-    /* ===== GLOBAL ===== */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #0b0b0b;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-    section { padding: 120px 80px; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b0b;
+  color: #fff;
+}
 
-    h1, h2 { color: gold; }
+/* LIGHT MODE */
+.light {
+  background: #f5f5f5;
+  color: #111;
+}
+.light .navbar { background: rgba(255,255,255,0.9); }
+.light .card { background: #fff; }
 
-    /* ===== NAVBAR ===== */
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      padding: 25px 80px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(8px);
-      z-index: 1000;
-    }
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 25px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
 
-    .navbar a {
-      margin-left: 30px;
-      color: #aaa;
-      text-decoration: none;
-      font-size: 0.9rem;
-    }
+.navbar a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #aaa;
+  font-size: 0.9rem;
+}
 
-    .navbar a.active,
-    .navbar a:hover {
-      color: gold;
-    }
+.navbar a.active,
+.navbar a:hover { color: gold; }
 
-    /* ===== GRID SYSTEM ===== */
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      align-items: center;
-    }
+.mode-btn {
+  margin-left: 20px;
+  background: none;
+  border: none;
+  color: gold;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
 
-    /* ===== ABOUT BOX ===== */
-    .about-box {
-      background: rgba(255,255,255,0.1);
-      border-left: 4px solid gold;
-      padding: 30px;
-      border-radius: 15px;
-      backdrop-filter: blur(8px);
-      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-    }
+/* SECTIONS */
+section {
+  padding: 120px 80px;
+}
 
-    .highlight { color: gold; font-weight: 600; }
+h1, h2 { color: gold; }
 
-    /* ===== HERO IMAGE ===== */
-    .hero-image img {
-      width: 320px;
-      border-radius: 50%;
-      box-shadow: 0 0 120px rgba(255,215,0,0.6);
-      display: block;
-      margin: auto;
-    }
+/* GRID */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+  gap: 40px;
+  align-items: center;
+}
 
-    /* ===== GALLERY & PROJECTS ===== */
-    .card {
-      background: #111;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-      transition: transform 0.3s;
-    }
+/* ABOUT */
+.about-box {
+  background: rgba(255,255,255,0.1);
+  border-left: 4px solid gold;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(8px);
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+/* IMAGE */
+.hero-image img {
+  width: 320px;
+  border-radius: 50%;
+  box-shadow: 0 0 120px rgba(255,215,0,0.6);
+  display: block;
+  margin: auto;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
+/* CARDS */
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+.card:hover { transform: translateY(-5px); }
 
-    /* ===== CONTACT ===== */
-    .contact p {
-      font-size: 1.1rem;
-    }
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
 
-    /* ===== MOBILE ===== */
-    @media (max-width: 768px) {
-      section { padding: 100px 20px; }
-      .navbar { padding: 20px; }
-    }
-  </style>
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 15px;
+}
+
+/* TRANSITION */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.6s ease;
+}
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  section { padding: 100px 20px; }
+  .navbar { padding: 20px; }
+}
+</style>
 </head>
 
 <body>
-<div id="app">
+<div id="app" :class="{light: !dark}">
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <strong>Jonard Bacani</strong>
-    <nav>
-      <a href="#home" :class="{active: active==='home'}" @click="active='home'">Home</a>
-      <a href="#gallery" :class="{active: active==='gallery'}" @click="active='gallery'">Gallery</a>
-      <a href="#projects" :class="{active: active==='projects'}" @click="active='projects'">Projects</a>
-      <a href="#contact" :class="{active: active==='contact'}" @click="active='contact'">Contact</a>
-    </nav>
-  </header>
+<!-- NAVBAR -->
+<header class="navbar">
+  <strong>Jonard Bacani</strong>
+  <nav>
+    <a href="#home" :class="{active: active==='home'}">Home</a>
+    <a href="#gallery" :class="{active: active==='gallery'}">Gallery</a>
+    <a href="#projects" :class="{active: active==='projects'}">Projects</a>
+    <a href="#contact" :class="{active: active==='contact'}">Contact</a>
+    <button class="mode-btn" @click="dark=!dark">
+      {{ dark ? '☀ Light' : '🌙 Dark' }}
+    </button>
+  </nav>
+</header>
 
-  <!-- HOME -->
-  <section id="home">
-    <div class="container">
-      <div class="about-box">
-        <p class="highlight">HELLO — I’M</p>
-        <h1>{{ profile.name }}</h1>
-        <p>{{ profile.tagline }}</p>
-        <p>{{ profile.roles }}</p>
-      </div>
-
-      <div class="hero-image">
-        <img :src="profile.photo" alt="Profile">
-      </div>
+<!-- HOME -->
+<section id="home">
+  <div class="container">
+    <div class="about-box">
+      <p><strong>HELLO — I’M</strong></p>
+      <h1>{{ profile.name }}</h1>
+      <p>{{ profile.tagline }}</p>
+      <p>{{ profile.roles }}</p>
     </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery">
-    <h2>Gallery</h2>
-    <div class="container">
-      <div class="card" v-for="item in gallery" :key="item.title"
-     @click="modalImage = item.image">
-  <img :src="item.image">
-  <p class="highlight">{{ item.title }}</p>
-</div>
+    <div class="hero-image">
+      <img :src="profile.photo">
     </div>
-    <div v-if="modalImage" class="modal" @click="modalImage=null">
+  </div>
+</section>
+
+<!-- GALLERY -->
+<transition name="fade">
+<section id="gallery">
+  <h2>Gallery</h2>
+  <div class="container">
+    <div class="card" v-for="item in gallery" :key="item.title"
+         @click="modalImage=item.image">
+      <img :src="item.image">
+      <p>{{ item.title }}</p>
+    </div>
+  </div>
+</section>
+</transition>
+
+<!-- PROJECTS -->
+<transition name="fade">
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="container">
+    <div class="card" v-for="p in projects" :key="p.name">
+      <h3>{{ p.name }}</h3>
+      <p>{{ p.description }}</p>
+    </div>
+  </div>
+</section>
+</transition>
+
+<!-- CONTACT -->
+<transition name="fade">
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Email: {{ contact.email }}</p>
+  <p>GitHub: {{ contact.github }}</p>
+  <p>LinkedIn: {{ contact.linkedin }}</p>
+</section>
+</transition>
+
+<!-- MODAL -->
+<div v-if="modalImage" class="modal" @click="modalImage=null">
   <img :src="modalImage">
 </div>
-
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="container">
-      <div class="card" v-for="project in projects" :key="project.name">
-        <h3 class="highlight">{{ project.name }}</h3>
-        <p>{{ project.description }}</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact</h2>
-    <p>Email: {{ contact.email }}</p>
-    <p>GitHub: {{ contact.github }}</p>
-    <p>LinkedIn: {{ contact.linkedin }}</p>
-  </section>
 
 </div>
 
@@ -186,7 +228,9 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
+      dark: true,
       active: 'home',
+      modalImage: null,
 
       profile: {
         name: 'Jonard Bacani',
@@ -199,24 +243,32 @@ createApp({
         { title: 'Confidence', image: 'img1.jpg' },
         { title: 'Adventure', image: 'img2.jpg' },
         { title: 'Creativity', image: 'img3.jpg' }
-        
       ],
 
       projects: [
-        {
-          name: 'Lost & Found Tracker',
-          description: 'A campus-based system for reporting and tracking lost items.'
-        },
-        {
-          name: 'PawCare App',
-          description: 'A responsible pet ownership app aligned with SDG 16.'
-        }
+        { name: 'Lost & Found Tracker', description: 'Campus-based lost item tracking system.' },
+        { name: 'PawCare App', description: 'Responsible pet ownership app aligned with SDG 16.' }
       ],
 
       contact: {
         email: 'jonard@email.com',
         github: 'github.com/jonard',
         linkedin: 'linkedin.com/in/jonard'
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll);
+  },
+  methods: {
+    onScroll() {
+      const ids = ['home','gallery','projects','contact'];
+      for (let id of ids) {
+        const el = document.getElementById(id);
+        const rect = el.getBoundingClientRect();
+        if (rect.top <= 150 && rect.bottom >= 150) {
+          this.active = id;
+        }
       }
     }
   }
