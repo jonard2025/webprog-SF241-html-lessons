@@ -146,11 +146,16 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="container">
-      <div class="card" v-for="item in gallery" :key="item.title">
-        <img :src="item.image" alt="">
-        <p class="highlight">{{ item.title }}</p>
-      </div>
+      <div class="card" v-for="item in gallery" :key="item.title"
+     @click="modalImage = item.image">
+  <img :src="item.image">
+  <p class="highlight">{{ item.title }}</p>
+</div>
     </div>
+    <div v-if="modalImage" class="modal" @click="modalImage=null">
+  <img :src="modalImage">
+</div>
+
   </section>
 
   <!-- PROJECTS -->
@@ -194,6 +199,7 @@ createApp({
         { title: 'Confidence', image: 'img1.jpg' },
         { title: 'Adventure', image: 'img2.jpg' },
         { title: 'Creativity', image: 'img3.jpg' }
+        
       ],
 
       projects: [
