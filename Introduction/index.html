@@ -6,50 +6,137 @@
   <title>Jonard Bacani</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 25px 80px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+    }
+
+    .navbar nav a {
+      margin-left: 30px;
+      text-decoration: none;
+      color: #aaa;
+    }
+
+    .navbar nav a:hover,
+    .navbar nav a.active {
+      color: gold;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 140px 80px 80px;
+    }
+
+    /* GRID CONTAINER (YOUR CSS APPLIED) */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* ABOUT BOX (YOUR CSS APPLIED) */
+    .about-box {
+      background: rgba(255, 255, 255, 0.1);
+      border-left: 4px solid gold;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+    }
+
+    .about-box p {
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .highlight {
+      color: gold;
+      font-weight: 600;
+    }
+
+    /* IMAGE */
+    .hero-image {
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-image img {
+      width: 320px;
+      border-radius: 50%;
+      box-shadow: 0 0 120px rgba(255, 215, 0, 0.6);
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px;
+      }
+      .hero {
+        padding: 120px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">Jonard Bacani</div>
-    <nav>
-      <a href="#home" class="active">Home</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">Jonard Bacani</div>
+  <nav>
+    <a href="#home" class="active">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="home">
+<!-- HERO -->
+<section class="hero" id="home">
 
-    <!-- LEFT CONTENT -->
-    <div class="hero-text">
-      <span class="intro">HELLO — I’M</span>
+  <div class="container">
+
+    <!-- LEFT -->
+    <div class="about-box">
+      <p class="intro">HELLO — I’M</p>
       <h1>Jonard Bacani</h1>
-      <p class="tagline">
-        Curious by nature.<br>
+
+      <p>
+        <span class="highlight">Curious by nature.</span><br>
         Cyber-driven by passion.
       </p>
 
-      <p class="roles">
+      <p>
         CYBERSECURITY • WEB • STUDENT
       </p>
-
-      <div class="socials">
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
-      </div>
     </div>
 
-    <!-- RIGHT IMAGE -->
+    <!-- RIGHT -->
     <div class="hero-image">
       <img src="your-photo.png" alt="Profile photo">
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 </body>
 </html>
